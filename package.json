@@ -1,0 +1,37 @@
+{
+  "name": "zxpchiji-cli",
+  "version": "1.0.0",
+  "description": "前端脚手架测试",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --config build/webpack.config.dev.js",
+    "build:test": "rimraf dist && webpack --config build/webpack.config.test.js",
+    "build:prod": "rimraf dist && webpack --config build/webpack.config.prod.js",
+    "lint": "eslint --fix --ext .vue,.js src build",
+    "lint-staged": "lint-staged",
+    "build:stats": "webpack --config build/webpack.config.prod.js --json > stats.json",
+    "analyz": "cross-env NODE_ENV=production ANALYZE=true npm_config_report=true npm run prod",
+    "dll": "webpack --config build/webpack.config.dll"
+  },
+  "bin": {
+    "zxpchiji": "./bin/cli.js"
+  },
+  "keywords": [
+    "zxpchiji-cli",
+    "zxpchiji",
+    "脚手架"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^12.0.0",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.7.0",
+    "fs-extra": "^11.2.0",
+    "handlebars": "^4.7.8",
+    "inquirer": "^8.0.0",
+    "log-symbols": "^4.0.0",
+    "ora": "^5.0.0"
+  }
+}
